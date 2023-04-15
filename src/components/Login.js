@@ -25,8 +25,12 @@ const Login = () => {
         onSubmit={(values, { setSubmitting }) => {
           axios.post(`${config.api}/user/login`, values)
             .then(response => {
+              localStorage.setItem('token',response.data.token);
+              localStorage.setItem('email',response.data.user.email);
+              
 nav("/page")
               console.log(response);
+             
               // handle successful login
             })
             .catch(error => {

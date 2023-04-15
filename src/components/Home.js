@@ -4,6 +4,7 @@ import '../css/home.css'
 import Tracker from './home.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faBullseye, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 export default function Home() {
@@ -23,7 +24,8 @@ export default function Home() {
   
   achieve next level of yours.
 </h3>
-<button className="large-btn">Get Started</button>
+<Link to='/register'>
+<button className="large-btn">Get Started</button></Link>
        
         </div>
         <div className="col-lg-6 order-lg-2">

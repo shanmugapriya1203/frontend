@@ -3,8 +3,11 @@ import axios from 'axios';
 import '../css/page.css'
 import Nav from "./Nav"
 import { config } from '../config';
+import { useNavigate } from 'react-router-dom';
 
-const FitnessActivityForm = ({ user }) => {
+const FitnessActivityForm = () => {
+  let nav=useNavigate();
+  const email=localStorage.getItem('email')
   const [formData, setFormData] = useState({
     date: '',
     exerciseType: '',
@@ -21,11 +24,9 @@ const FitnessActivityForm = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (!user) {
-        throw new Error('No user ID provided');
-      }
-      const response = await axios.post(`${config.api}/fit/fitnessActivity`, {
-        user,
+      
+      const response = await axios.post(`${config.api}/fit/fitnessActivity/${email}`, {
+        
         date,
         exerciseType,
         duration,
@@ -33,10 +34,13 @@ const FitnessActivityForm = ({ user }) => {
         notes,
       }, {
         headers: {
+
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
       alert(response.data.message);
+      nav('/table')
+
     } catch (error) {
       console.error(error);
       alert('Error saving fitness activity data.');
@@ -80,6 +84,7 @@ const FitnessActivityForm = ({ user }) => {
         />
         <label htmlFor="notes">Notes:</label>
         <textarea name="notes" value={notes} onChange={handleChange}></textarea>
+        
         <button type="submit">Save</button>
       </form>
     </>
