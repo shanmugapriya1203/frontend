@@ -19,7 +19,7 @@ const Contact = () => {
         <label htmlFor="message">Message:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <Link to='/home'><button type="submit">Submit</button></Link>
+        <Link to='/'><button type="submit">Submit</button></Link>
       </form>
     </div>
     </>
