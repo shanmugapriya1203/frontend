@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Dongle&family=Josefin+Sans:wght@300&family=Noto+Sans+Miao&family=Roboto+Mono:wght@200&display=swap');
 .signup-container {
   width: 500px;
   margin: 0 auto;
@@ -16,6 +17,11 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+
+}
+h1{
+  font-family: 'Noto Sans Miao', sans-serif;
+
 }
 
 .signup-container input[type="name"],
@@ -30,8 +36,8 @@
 }
 
 .signup-container button[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
+  background-color: #B3BAB5;
+  color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
@@ -41,6 +47,11 @@
 
 
 .signup-container button[type="submit"]:hover {
-  background-color: #3e8e41;
+  background-color: #B3BAB5;
   
+}
+.error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.25em;
 }

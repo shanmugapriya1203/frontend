@@ -14,7 +14,7 @@ function Nav() {
 
     <nav className="navbar">
       <a href="/" className="logo">fitnessZone</a>
-     <button onClick={()=>logout()}>Log out</button>
+     <button  className='logout-button'  onClick={()=>logout()}>Log out</button>
     </nav>
   );
 }

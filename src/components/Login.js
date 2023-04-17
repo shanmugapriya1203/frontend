@@ -5,6 +5,7 @@ import axios from 'axios';
 import { config } from '../config';
 import { useNavigate } from 'react-router-dom';
 import '../css/login.css'
+import Navbar from './Navbar';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -17,6 +18,8 @@ const LoginSchema = Yup.object().shape({
 const Login = () => {
   const nav=useNavigate();
   return (
+    <>
+    <Navbar/>
     <div className='login-container'>
       <h1>Login</h1>
       <Formik
@@ -61,6 +64,7 @@ nav("/page")
         )}
       </Formik>
     </div>
+    </>
   );
 };
 

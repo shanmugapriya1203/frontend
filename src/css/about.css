@@ -1,0 +1,27 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .about-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #3d47a1;
+    margin-bottom: 20px;
+  }
+  
+  .about-container p {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+  }
+  

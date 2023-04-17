@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { config } from '../config';
 import register from './login.png'
 import '../css/signup.css'
-import Nav from "./Nav"
+import Navbar from './Navbar';
 
 
 const Signup = () => {
@@ -41,7 +41,7 @@ const Signup = () => {
 
   return (
     <>
-    <Nav/>
+    <Navbar/>
     <div className='signup-container'>
       <h1>Sign up</h1>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
@@ -50,22 +50,22 @@ const Signup = () => {
             <div >
               <label>Name:</label>
               <Field type="name" name="name" required />
-              <ErrorMessage name="name" component="div" />
+              <ErrorMessage name="name" component="div"className="error" />
             </div>
             <div >
               <label>Email:</label>
               <Field type="email" name="email" required />
-              <ErrorMessage name="email" component="div" />
+              <ErrorMessage name="email" component="div" className="error"/>
             </div>
             <div>
               <label>Password:</label>
               <Field type="password" name="password" required />
-              <ErrorMessage name="password" component="div" />
+              <ErrorMessage name="password" component="div"  className="error"/>
             </div>
             <div>
               <label>Confirm Password:</label>
               <Field type="password" name="confirmPassword" required />
-              <ErrorMessage name="confirmPassword" component="div" />
+              <ErrorMessage name="confirmPassword" component="div" className="error" />
             </div>
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Signing up...' : 'Sign up'}
